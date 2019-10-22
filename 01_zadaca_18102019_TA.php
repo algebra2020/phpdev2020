@@ -125,13 +125,13 @@ echo "1. Koji je od navedenih operatora aritmetički operator?";
     <ol type="a">
         <li>%</li>
         <li>&&</li>
-        <li>-</li>
+        <li>.</li>
     </ol>
 </div>
 
 <div class='odgovor'>
 <?php
-echo "Odgovor: c <br><br>";
+echo "Odgovor: a <br><br>";
 ?>
 
 </div>
@@ -307,7 +307,7 @@ echo 'Rezultat nakon automatskog povećavanja varijable $a kojoj je
     <div class='kod'>
         KOD u PHP-u za pretvorbu varijable $a i ispis na ekranu<br>
         <code>
-            $$a = (float)$a;<br>
+            $a = (float)$a;<br>
             echo $a.'<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>
             <span class="cm-m-xml cm-tag">br</span>
             <span class="cm-m-xml cm-tag cm-bracket">&gt;</span>';<br>
@@ -359,7 +359,8 @@ echo '<br>Izvođenje KODA na stranici izgleda ovako:<br><br>';
 ?>
     <div class='izvod'>
 <?php
-$a = $a + 5;
+// $a = $a + 5;  // ovo je isto ok
+$a += 5;   // mozemo i ovako
 echo $a;
 ?>
     </div>
