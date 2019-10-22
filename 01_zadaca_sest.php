@@ -18,7 +18,8 @@ $b = 3;
         <li><?php echo $a . ' - ' . $b . ' = ' . ($a - $b) ?> </li>
         <li><?php echo $a . ' * ' . $b . ' = ' . ($a * $b) ?> </li>
         <li><?php echo $a . ' / ' . $b . ' = ' . ($a / $b) ?> </li>
-        <li><?php echo $a . ' % ' . $b . ' = ' . ($a % $b) ?> </li>
+<!--        <li><?php // echo $a . ' % ' . $b . ' = ' . ($a % $b) ?> </li>-->
+        <li><?= $a . ' % ' . $b . ' = ' . ($a % $b) ?> </li>
 
     </ol>
 
