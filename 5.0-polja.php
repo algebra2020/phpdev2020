@@ -107,3 +107,25 @@ foreach ($polje as $key => $value) {
 }
 
 echo '</ul>';
+
+/**
+ * Ispis pojedinih elementa polja
+ */
+// Ispis 2, 3, i 4 elemanta
+echo " ".$polje[2]." ". $polje[3]." ".$polje[4];
+
+echo '<hr>Ispis uz asocijacije pojedinih:<br>';
+// Ispis 2, 3, i 4 elemanta
+echo " ".$polje['brojPI']." ". $polje['sokic']." ".$polje['grickalica'];
+
+
+// PReformatirani ispis:
+echo '<hr>Preformatirani <span>print_r</span><br>';
+echo '<pre>';
+print_r($polje);
+echo '</pre>';
+
+echo '<hr>Preformatirani <span>var_dump</span><br>';
+echo '<pre>';
+var_dump($polje);
+echo '</pre>';
