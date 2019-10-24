@@ -11,3 +11,4 @@ ovo je neznam koji pokušaj
 
 # ZADACA
 22.10.2019. Tatjana +
+24.10.2019. Tatjana +
