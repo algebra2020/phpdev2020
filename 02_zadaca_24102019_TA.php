@@ -441,8 +441,6 @@ $b =4;
     <?php
   
     $polje=array();
-    //var_dump($polje);
-    //zašto i nakon ovoga zadržava vrijednosti ključeva koje su prethodno dane
     $polje=array('Tatjana', 'Ognjen', 'Jelena', 'Marin', 'Dino');
     
     sort($polje);
