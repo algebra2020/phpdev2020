@@ -437,7 +437,7 @@ $b =4;
 </div>
 
 <div class='odgovor'>
-    Odgovor:<span style="color:red; font-weight: bolder; font-size: 22pt"> ? pitanje za predavača </span><br><br>
+    Odgovor:<br><br>
     <?php
   
     $polje=array();
@@ -452,7 +452,9 @@ $b =4;
     . 'vrijednosti polja:<br>';
     
      for($i=0; $i<count($polje);$i++) {
-       echo $key.' => '.$polje[$i].'<br>';  }
+       echo $polje[$i].'<br>';  }
+       
+  
     ?>
  <br>
     <div class='kod'>
@@ -465,14 +467,14 @@ $b =4;
     sort($polje);<br>
     
     
-    echo 'Ispis vrijednosti i ključeva za polje sortirano po abecednom redu '<br>
+    echo 'Ispis vrijednosti polja sortirano po abecednom redu '<br>
     . 'vrijednosti polja:
     <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>
     <span class="cm-m-xml cm-tag">br</span>
     <span class="cm-m-xml cm-tag cm-bracket">&gt;</span>';<br>
     
-    for($i=0; $i<count($polje);$i++) {
-       echo $key.' => '.$polje[$i].'
+    for($i=0; $i<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>count($polje); $i++) {<br>
+       echo $polje[$i].'
        <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>
        <span class="cm-m-xml cm-tag">br</span>
        <span class="cm-m-xml cm-tag cm-bracket">&gt;</span>';  }
