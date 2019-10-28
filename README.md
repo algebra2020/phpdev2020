@@ -5,7 +5,10 @@ PHP online edukacija
 
 
 #Zadaca:
-za 30.10 svi zadaci 6.7 strana 72.
+za 30.10 
+-  svi zadaci 6.7 strana 72.
+-  zadaci 1-3 točka 7.8 strana 85
+
 
 # Plusići
 22.10.2019. Tatjana +
