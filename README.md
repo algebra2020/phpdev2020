@@ -3,12 +3,13 @@ PHP online edukacija
 
 -  Započeli smo 14.10.2019.
 
-kratku pauzu imamo nakon 2 sata, da ranije zavrsimo dovoljno je 15 min
 
-nadam se da sada konacno radi
+#Zadaca:
+za 30.10 
+-  svi zadaci 6.7 strana 72.
+-  zadaci 1-3 točka 7.8 strana 85
+  
 
-ovo je neznam koji pokušaj
-
-# ZADACA
+# Plusići
 22.10.2019. Tatjana +
 24.10.2019. Tatjana +
