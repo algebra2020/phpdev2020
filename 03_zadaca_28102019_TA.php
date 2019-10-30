@@ -454,56 +454,88 @@ hr_mjesec()
     Odgovor:<br><br>
 
 <?php
-
-$ucenik=array();
-$ucenik[1] = array('ime' => 'Dino', 'prezime' =>'Lipić');
-$ucenik[2] = array('ime' => 'Jelena', 'prezime' =>'Šinko Jagačić');
-$ucenik[3] = array('ime' => 'Marin', 'prezime' =>'Vlahović');
-$ucenik[4] = array('ime' => 'Ognjen', 'prezime' =>'Vidaček');
-$ucenik[5] = array('ime' => 'Tatjana', 'prezime' =>'Antić');
-$ucenik[6] = array('ime' => 'Jelena', 'prezime' =>'Šinko Jagačić');
-$ucenik[7] = array('ime' => 'Jelena', 'prezime' =>'Šinko Jagačić');
-
-foreach ($ucenik as $key =>$ime) {
-    foreach ($ime as $value) {
-        echo " ".$value;
-    }
-    echo "<br>";
-}
-
-
-
-
-
-
-
-//ovo je dalje zadaća
-              
-        
-function ispis_tablice ($popis){
-   echo "Popis učenika u ovoj grupi je: <br>";
-   $Rb=1;
-   echo '<table border="1>
-        <tr>
-            <th>Rb</th>
-            <th>Ime</th>
-            <th>Prezime</th>
-            <th>Napomena</th>
+function tablica_ispis($imena)
+{
+    echo '<table>'
+    . '<tr>
+        <th style="width:100px"> Ime </th>
+        <th style="width:100px"> Prezime </th>
         </tr>';
-   foreach ($popis as $key => $ucenik)
-   {
-        echo '<tr>
-            
-            <td>'.$ucenik["ime"].'</td>
-            <td>'.$ucenik["prezime"].'</td>
-            <td>  </td>
-            </tr>';
         
-   }
+ foreach ($imena as $key => $ucenik){
+            echo '<table>'
+            . '<tr>
+                <td style="width:100px">'.$ucenik["ime"].'</td>
+                <td style="width:100px">'.$ucenik["prezime"].'</td>
+                </tr>';
+ }
+            echo '</table>';
+        }
 
- echo '</table>';
-}
+ $ucenici=array();    
+        
+$ucenici[1]["ime"]='Dino';
+$ucenici[1]["prezime"]='Lipić';
+        
+$ucenici[2]["ime"]='Jelena';
+$ucenici[2]["prezime"]='Šinko Jagačić';
+        
+$ucenici[3]["ime"]='Marin';
+$ucenici[3]["prezime"]='Vlahović';
+        
+$ucenici[4]["ime"]='Ognjen';
+$ucenici[4]["prezime"]='Vidaček';
+        
+$ucenici[5]["ime"]='Tatjana';
+$ucenici[5]["prezime"]='Antić';
 
-ispis_tablice($ucenik);
+  
+tablica_ispis($ucenici);
 ?>
+
+
+ <div class='kod'>
+<code>
+        KOD u PHP-u<br><br>
+    
+        function tablica_ispis($imena)<br>
+{
+echo '<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>table>'<br>
+. '<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>tr><br>
+<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>th style="width:100px"> Ime  <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/th><br>
+<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>th style="width:100px"> Prezime <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/th><br>
+<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/tr>';<br>
+        
+ foreach ($imena as $key => $ucenik){
+ echo '<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>table>'<br>
+            . '<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>tr><br>
+            <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>td style="width:100px">'.$ucenik["ime"].'<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/td><br>
+            <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>td style="width:100px">'.$ucenik["prezime"].'<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/td><br>
+            <span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/tr>';<br>
+ }
+ echo '<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>/table>';<br>
+            }<br>
+
+            $ucenici=array();    <br>
+        
+            $ucenici[1]["ime"]='Dino';<br>
+            $ucenici[1]["prezime"]='Lipić';<br>
+        
+            $ucenici[2]["ime"]='Jelena';<br>
+            $ucenici[2]["prezime"]='Šinko Jagačić';<br>
+        
+            $ucenici[3]["ime"]='Marin';<br>
+            $ucenici[3]["prezime"]='Vlahović';<br>
+        
+            $ucenici[4]["ime"]='Ognjen';<br>
+            $ucenici[4]["prezime"]='Vidaček';<br>
+        
+            $ucenici[5]["ime"]='Tatjana';<br>
+            $ucenici[5]["prezime"]='Antić';<br>
+
+  
+tablica_ispis($ucenici);
+    
+    </code>
+ </div>
 </div>
