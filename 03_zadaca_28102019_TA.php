@@ -262,8 +262,8 @@ echo 'Zadaci za ponavljanje - zadaća s predavanja od 28.10.2019.<br><br>';
     Odgovor:<br><br>
     <?php
   
-    $polje=array();
-    $polje=array('Tatjana', 'Ognjen', 'Jelena', 'Marin', 'Dino');
+    //$polje=array();
+    $polje=array('Tatjana', 'Ognjen', 5=>'Jelena', 2=>'Marin', 'Dino');
     
     ksort($polje);
     
@@ -319,14 +319,16 @@ echo 'Zadaci za ponavljanje - zadaća s predavanja od 28.10.2019.<br><br>';
     <?php
   
     $polje=array();
-    for($i=1; $i<=100; $i++)
-    {$polje[]=$i;}
+    for($i=1; $i<=100; $i++){
+        $polje[]=$i;   
+    }
         
    echo 'Ispis sadržaja polja:<br>';
     
-   foreach ($polje as $value) 
-           {echo $value.' <br>';}
-       
+   foreach ($polje as $value) {
+       echo $value.' <br>';     
+   }
+
    
     ?>
  <br>
@@ -457,19 +459,19 @@ hr_mjesec()
 function tablica_ispis($imena)
 {
     echo '<table>'
-    . '<tr>
+    . '<thead><tr>
         <th style="width:100px"> Ime </th>
         <th style="width:100px"> Prezime </th>
-        </tr>';
+        </tr></thead><tbody>';
         
  foreach ($imena as $key => $ucenik){
-            echo '<table>'
-            . '<tr>
+           // echo '<table>'
+            echo '<tr>
                 <td style="width:100px">'.$ucenik["ime"].'</td>
                 <td style="width:100px">'.$ucenik["prezime"].'</td>
                 </tr>';
  }
-            echo '</table>';
+            echo '</tbody></table>';
         }
 
  $ucenici=array();    
@@ -489,7 +491,7 @@ $ucenici[4]["prezime"]='Vidaček';
 $ucenici[5]["ime"]='Tatjana';
 $ucenici[5]["prezime"]='Antić';
 
-  
+print_r($ucenici);
 tablica_ispis($ucenici);
 ?>
 
@@ -537,5 +539,40 @@ echo '<span class="cm-m-xml cm-tag cm-bracket">&lt;</span>table>'<br>
 tablica_ispis($ucenici);
     
     </code>
+     
  </div>
+    <div class="code">
+        <h3>Zadatak 7.8 točka 3 funkcije plus minus pta pod</h3>
+        <code>
+            <?php
+function sum($a,$b)
+{
+    return $a+$b;
+}
+function raz($a,$b)
+{
+    return $a-$b;
+}
+function mnoz($a,$b)
+{
+    return $a*$b;
+}
+function djel($a,$b)
+{
+    return $a/$b;
+}
+function sve($a,$b)
+{
+    echo "zbroj:".$a." + ".$b." = ".sum($a,$b)."<br>";
+    printf("razlika:%d - %d = %d<br>",$a,$b,raz($a,$b)) ;
+    echo mnoz($a,$b);
+    echo djel($a,$b);
+}
+// NE KORISTITI varijable imena: $i, $j, $k, $ii, $jj, $kk, $iii, jjj...
+$prvi_broj = 4;
+$drugi_broj = 2;
+sve($prvi_broj,$drugi_broj);
+?>
+        </code>
+    </div>
 </div>
