@@ -5,11 +5,12 @@ PHP online edukacija
 
 
 #Zadaca:
-za 30.10 
--  svi zadaci 6.7 strana 72.
--  zadaci 1-3 točka 7.8 strana 85
+za 05.11
+- proci sve funkcije sa strane 90
+-  svi zadaci 8.5 na stranici 91
   
 
 # Plusići
 22.10.2019. Tatjana +
 24.10.2019. Tatjana +
+30.10.2019. Tatjana + (položeno : Čestitam!)
