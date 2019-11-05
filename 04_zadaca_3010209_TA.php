@@ -750,16 +750,14 @@ echo '<span class="zagrada_otv">
 
 
 <?php
-
-if(isset($_POST['mailadresa'])){
-    
   function upisadrese(){
      $mailadrr=$_POST['mailadresa'];
      $handle= fopen('zadaci/adrese.txt', 'a+');
-     fwrite($handle, $mailadrr);
+     fwrite($handle, $mailadrr. PHP_EOL);
      fclose($handle);    
     }
-    
+if(isset($_POST['mailadresa'])){
+
     if(is_file('zadaci/adrese.txt')){
         upisadrese();
        echo '<br>Datoteka <i>adrese.txt</i> postoji u folderu zadaci i u nju smo upisali Vašu adresu. <br>';
