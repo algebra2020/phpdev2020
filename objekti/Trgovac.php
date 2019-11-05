@@ -5,19 +5,35 @@ require_once './Covjek.php';
 class Trgovac extends Covjek {
 
     private $zarada = 0;
-    public $p;
     public $skladiste = array();
 
     public function __construct() {
-        $this->p = new Proizvod('kruh', 9.99, 5);
-        $this->skladiste[] = $this->p;
+        $p1 = new Proizvod('kruh', 9.99, 50);
+        $p2 = new Proizvod('mlijeko', 7.29, 30);
+        $this->skladiste[] = $p1;
+        $this->skladiste[] = $p2;
     }
 
     public function dohvati($ime, $kolicina) {  // uzima sa skladista proizvod
-        if ($this->skladiste[0]->kolicina >= $kolicina) {
-            $this->skladiste[0]->kolicina -= $kolicina;
-            return $this->skladiste[0]->cijena*$kolicina;
+        //Pretrazivac proizvoda vraca proizvod na skladista
+        $item = null;
+        foreach ($this->skladiste as $p) {
+            if ($ime == $p->ime) {
+                $item = $p;
+                break;
+            }
         }
+        // echo "proizvod je pod " . $item->kolicina;
+        if ($item->kolicina >= $kolicina) {
+            $item->kolicina -= $kolicina;
+            return $item->cijena * $kolicina;
+        }
+        /*
+          if ($this->skladiste[0]->kolicina >= $kolicina) {
+          $this->skladiste[0]->kolicina -= $kolicina;
+          return $this->skladiste[0]->cijena * $kolicina;
+          }
+         */
     }
 
     public function izlistaj_skladiste() {
