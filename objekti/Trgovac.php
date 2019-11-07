@@ -1,20 +1,24 @@
 <?php
 
-require_once './Covjek.php';
+require_once './Kupac.php';
 
-class Trgovac extends Covjek {
+class Trgovac extends Kupac {
 
     private $zarada = 0;
     public $skladiste = array();
 
-    public function __construct() {
+    public function __construct($novo_ime='John') {
+        parent::__construct($novo_ime);
         $p1 = new Proizvod('kruh', 9.99, 50);
         $p2 = new Proizvod('mlijeko', 7.29, 30);
+        
         $this->skladiste[] = $p1;
         $this->skladiste[] = $p2;
+        $this->skladiste[] = new Proizvod('sladoled', 5, 100);
+        $this->skladiste[] = new Proizvod('cokolada', 6, 300);
     }
 
-    public function dohvati($ime, $kolicina) {  // uzima sa skladista proizvod
+    public function dohvati($ime, $kolicina,&$kupac) {  // uzima sa skladista proizvod
         //Pretrazivac proizvoda vraca proizvod na skladista
         $item = null;
         foreach ($this->skladiste as $p) {
@@ -24,7 +28,7 @@ class Trgovac extends Covjek {
             }
         }
         // echo "proizvod je pod " . $item->kolicina;
-        if ($item->kolicina >= $kolicina) {
+        if ($item->kolicina >= $kolicina && $kupac->get_lova()>=$item->cijena * $kolicina) {
             $item->kolicina -= $kolicina;
             return $item->cijena * $kolicina;
         }
@@ -37,6 +41,7 @@ class Trgovac extends Covjek {
     }
 
     public function izlistaj_skladiste() {
+        echo "<br>Trgovac:<b>".$this->get_ime()."</b>";
         echo "<ul>";
         foreach ($this->skladiste as $p) {
             printf("<li>%s, kolicina:%d cijena:%.2fkn</li>"
