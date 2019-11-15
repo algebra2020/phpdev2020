@@ -13,12 +13,12 @@ class Savez {
     private $t1;
     public $savez;  // Svojstvo, property
     
-    public function __construct($savez="") {
+    public function __construct(string $savez="") {
                 //echo '<br>--- Savez je kreiran! ---<br>';
           $this->set_savez($savez);
        }
     
-    function __destruct() {
+    public function __destruct() {
         //echo '<br>--- Savez je unisten! ---<br>';
     }
    

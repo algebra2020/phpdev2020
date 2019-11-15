@@ -8,16 +8,7 @@
  */
 
 class Sudac {
-    function __construct($sudac_ime="") {
-        //echo '<br>--- Kreiran je novi sudac! ---<br>';
-        $this->set_sudac_ime($sudac_ime);
-    }
-    
-    function __destruct() {
-        //echo '<br>--- Sudac je unisten! ---<br>';
-    }
-
-    /**
+     /**
      * <pre><code>
      * <?php
      * $sudac= new Sudac();
@@ -29,6 +20,17 @@ class Sudac {
     public $sudac_ime;  // Svojstvo, property
     public $rand_keys;
     public $suci=array();
+    
+    function __construct($sudac_ime="") {
+        //echo '<br>--- Kreiran je novi sudac! ---<br>';
+        $this->set_sudac_ime($sudac_ime);
+    }
+    
+    function __destruct() {
+        //echo '<br>--- Sudac je unisten! ---<br>';
+    }
+
+
     /**
      * Promjena imena pomoću metode
      * Ovakvo postavljanje svojstava zovemo SETTER metoda
@@ -36,10 +38,10 @@ class Sudac {
      */
     function set_sudac_ime($sudac_ime) {  // Metoda, Method
         $suci = array("Neo", "Morpheus", "Trinity", "Cypher", "Tank");
-        $rand_keys = array_rand($suci, 2);
-        //echo $suci[$rand_keys[1]] . "\n";
+        $rand_keys = array_rand($suci, 1);  // povratna vrijednost je value 
+        //$rand_keys = array_rand($suci, 2); ako vadimo dva člana vraca nam polje
         
-        $this->sudac_ime=ucfirst($suci[$rand_keys[1]] . "\n");
+        $this->sudac_ime=ucfirst($suci[$rand_keys] . "\n");
          
        
     }
