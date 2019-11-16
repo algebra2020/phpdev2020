@@ -98,6 +98,7 @@ class Rang {
     
 
 //Tatjana dodano
+   // public function pomocna($tim){
     public function pomocna($tim){
         $savez=new Savez();
       // $this->tim1=$tim1;

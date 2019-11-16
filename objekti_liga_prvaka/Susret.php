@@ -48,30 +48,52 @@ class Susret {
     }
 
     public function odigraj(DateTime $dt) {
-       
+       // zapamti vrijeme utakmice
+       $this->dt=$dt;
 // random 0-10
-        $b1 = rand(0, 3);
-        $b2 = rand(0, 3);
-        $this->polu_rezultat = $b1 . ":" . $b2;
-
+// $rand_gol_lookup=[0,0,0,0,0,0,0,0,0,9] 
+// 90% vjerojatnost 0 10% vjerojatnost 9 da se zabije 9 golova
+       $rand_gol_lookup=[
+           0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+           ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+           ,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+           ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+           ,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+           ,2,2,2,2,2,2,2,2,2,2,2,2,2
+           ,2,2,2,2,2,2,2,2,2,2,2,2,2
+           ,3,3,3,3,3,3,3,3
+           ,3,3,3,3,3,3,3,3
+           ,4,4,4,4,4
+           ,5,5,5,5,5
+           ,6,6,6
+           ,7,7,7
+           ,8,8
+           ,9];
+   //   var_dump($rand_gol_lookup);
+        $b1 = $rand_gol_lookup[rand(0, 218)];
+        $b2 = $rand_gol_lookup[rand(0, 218)];
+       // $this->polu_rezultat = $b1 . ":" . $b2;
+          $this->polu_rezultat = $b1. ":" . $b2;
+          
+          
 // random 0-5
-        $b3 = rand(0, 2);
-        $b4 = rand(0, 2);
+        $b3 = $rand_gol_lookup[rand(0, 218)];
+        $b4 = $rand_gol_lookup[rand(0, 218)];
         $this->rezultat = ($b1 += $b3) . ":" . ($b2 += $b4);
         $this->t1->set_golovi($b1);
         $this->t2->set_golovi($b2);
         $this->t1->set_primljeni($b2);
         $this->t2->set_primljeni($b1);
                       
-        
+        // dijelimo bodove ovisno o rezulattu utakmice
         if ($b1 > $b2) {
-            $this->t1->set_bodovi(3);
+            $this->t1->set_bodovi(3); // pobjeda domaći
             $this->t2->set_bodovi(0);
         } elseif ($b1 < $b2) {
-            $this->t1->set_bodovi(0);
+            $this->t1->set_bodovi(0);  // pobjeda gosti
             $this->t2->set_bodovi(3);
         } else {
-            $this->t1->set_bodovi(1);
+            $this->t1->set_bodovi(1);  // neriješeno
             $this->t2->set_bodovi(1);
         }
     }

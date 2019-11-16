@@ -1,14 +1,13 @@
 <?php
-spl_autoload_register(function ($class) {
-    include './' . $class . '.php';
-});
+require_once './AZivobice.php';
+require_once './IBuhe.php';
 /**
- * Klasa Covjek, nasljedjuje ju klasa Kupac
+ * Klasa Pas, 
  * @author John Doe <john.doe@example.com>
  * @access public
- * @property String $ime Ime covjeka
+ * @property String $ime Ime Psa
  */
-class Covjek extends AZivobice {
+class Macka extends AZivobice implements IBuhe {
         /**
      * <pre><code>
      * <?php
@@ -18,21 +17,15 @@ class Covjek extends AZivobice {
      * </code></pre>
      * @var String Ime čovjeka
      */
-    public $posao;
     public $ime;  // Svojstvo, property
-    function __construct($novo_ime='Jane Doe') {
-        echo '<br>--- Kreiran je novi covjek! ---<br>';
+    function __construct($novo_ime='garfield') {
+        echo '<br>--- Kreiran je novi macak! ---<br>';
         $this->set_ime($novo_ime);
     }
     function __destruct() {
-        echo '<br>--- Covjek je unisten! ---<br>';
+        echo '<br>--- macak je unisten! ---<br>';
     }
-    function set_posao($vrsta_posla) {  // Metoda, Method
-        $this->posao=$vrsta_posla;
-    }
-        function get_posao() {  // Metoda, Method
-        $this->posao->ispis();
-    }
+
 
     /**
      * Promjena imena pomoću metode
@@ -51,7 +44,17 @@ class Covjek extends AZivobice {
         return sprintf("%s, %s Bond",$this->ime,$this->ime) ;
     }
     function glasaj_se() {
-        //parent::glasaj_se();
-        echo "<br><b>lalalala</b>";
+        
+        echo "<br><b>Mijauuu</b>";
+    }
+
+    public function ceskaj_se() {
+        echo "<br>greb, greb... ?";
+    }
+        public function masi_repom() {
+        echo "<br>mašem repom... ?";
+    }
+    function jedi() {
+        echo "<br>   Jedem miseve"; 
     }
 }

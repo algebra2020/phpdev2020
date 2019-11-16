@@ -10,8 +10,8 @@ require_once './Savez.php';
 class Team {
     private $ime;
     private $bodovi;
-    private $golovi;
-    private $golovip;
+    private $golovi;   // dani golovi
+    private $golovip;  // primljeni golovi
     private $savez;
     
     

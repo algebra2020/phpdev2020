@@ -5,7 +5,7 @@
  * @todo sudac fali?
  * @todo rang lista
  */
-
+//TODO objasniti autoload
 require_once './Team.php';
 require_once './Susret.php';
 require_once './Rang.php';
@@ -47,7 +47,7 @@ $r->dodaj($susret3);
 //Tatjana dodano
 
 
-$ulistaj = $r->ulistaj($t1,$t2,$t3,$savez);
+$ulistaj = $r->ulistaj($t1,$t2,$t3,$savez);  // zelena tablica
 $pomocna1=$r->pomocna($savez);
 $pregled_utakmica=$r->pregled();
 
