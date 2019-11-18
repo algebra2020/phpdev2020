@@ -15,11 +15,14 @@ require_once './Savez.php';
 $t1=new Team("Liverpool");
 $t2=new Team("Bayern");
 $t3=new Team("Dinamo");
+$t4=new Team("Lion");
+
 $sudac1=new Sudac();
 $sudac2=new Sudac();
 $sudac3=new Sudac();
-$savez=new Savez();
-
+$sudac4=new Sudac();
+$sudac5=new Sudac();
+$sudac6=new Sudac();
 
 $susret1= new Susret($t1,$t2,$sudac1);
 $susret1->odigraj(new DateTime('NOW'));
@@ -30,33 +33,30 @@ $susret2->odigraj(new DateTime('NOW'));
 $susret3= new Susret($t3,$t1,$sudac3);
 $susret3->odigraj(new DateTime('NOW'));
 
+$susret4= new Susret($t4,$t1,$sudac4);
+$susret4->odigraj(new DateTime('NOW'));
+
+$susret5= new Susret($t2,$t4,$sudac5);
+$susret5->odigraj(new DateTime('NOW'));
+
+$susret6= new Susret($t3,$t4,$sudac6);
+$susret6->odigraj(new DateTime('NOW'));
 
 $r=new Rang();
 $r->dodaj($susret1);
 $r->dodaj($susret2);
 $r->dodaj($susret3);
+$r->dodaj($susret4);
+$r->dodaj($susret5);
+$r->dodaj($susret6);
 
-//$r->ispisi_tablicu();
-
-
-// Rezultat Liverpol-Bayern(1:0)
-//echo "Rezultat je:".$susret1->get_rezultat();
-//echo "Rezultat poluvremena je:".$susret1->get_polu_rezultat();
-
-
-//Tatjana dodano
+$r->dodaj_timove($t4);
+$r->dodaj_timove($t3);
+$r->dodaj_timove($t2);
+$r->dodaj_timove($t1);
 
 
-$ulistaj = $r->ulistaj($t1,$t2,$t3,$savez);  // zelena tablica
-$pomocna1=$r->pomocna($savez);
 $pregled_utakmica=$r->pregled();
 
 
-
-//echo "<br><br>Pregled utakmica u ligi:<br>";
-//echo "Utakmica 1: ".$susret1->get_rezultat()."(".$susret1->get_polu_rezultat().") Sudac utamice je: ".$sudac1->get_sudac_ime();
-//echo "<br>Utakmica 2: ".$susret2->get_rezultat()."(".$susret2->get_polu_rezultat().") Sudac utamice je: ".$sudac2->get_sudac_ime();
-//echo "<br>Utakmica 3: ".$susret3->get_rezultat()."(".$susret3->get_polu_rezultat().") Sudac utamice je: ".$sudac3->get_sudac_ime();
-
-
-//kraj
+$r->ispisi_tablicu();

@@ -4,7 +4,6 @@ require_once './Team.php';
 
 //Tatjana dodano
 require_once './Sudac.php';
-require_once './Savez.php';
 
 //kraj dodavanja
 
@@ -22,29 +21,31 @@ class Susret {
     private $dt; // vrijeme utakmice
     //Tatjana dodano
     private $sudac;
-    private $savez;
+    
+
     //kraj
 
     public function __construct(Team &$t1, Team &$t2, Sudac &$sudac) {
         $this->t1 = $t1;
         $this->t2 = $t2;
         //Tatjana dodano
+        
         $this->sudac=$sudac;
         //kraj
     }
 
     public function get_rezultat() {
 //"Rezultat Liverpol-Bayern(1:0)"
-        return sprintf("%s - %s:         %s  "
+        return sprintf("%s - %s:         %s "
                 , $this->t1->get_ime() //uzima ime iz klase Team
                 , $this->t2->get_ime() //uzima ime iz klase Team
                 , $this->rezultat()
+                
              ); 
     }
 
     public function rezultat() {
         return $this->rezultat;
-        
     }
 
     public function odigraj(DateTime $dt) {
@@ -80,12 +81,16 @@ class Susret {
         $b3 = $rand_gol_lookup[rand(0, 218)];
         $b4 = $rand_gol_lookup[rand(0, 218)];
         $this->rezultat = ($b1 += $b3) . ":" . ($b2 += $b4);
+        
+         // zapisujemo golove ovisno o rezulatu utakmice
         $this->t1->set_golovi($b1);
         $this->t2->set_golovi($b2);
         $this->t1->set_primljeni($b2);
         $this->t2->set_primljeni($b1);
+       
+        
                       
-        // dijelimo bodove ovisno o rezulattu utakmice
+        // dijelimo bodove ovisno o rezulatu utakmice
         if ($b1 > $b2) {
             $this->t1->set_bodovi(3); // pobjeda domaći
             $this->t2->set_bodovi(0);
@@ -115,6 +120,5 @@ class Susret {
         return $this->sudac->get_sudac_ime();
     }
 
-   
-
+  
 }

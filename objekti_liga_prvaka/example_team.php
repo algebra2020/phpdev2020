@@ -1,26 +1,16 @@
 <?php
-require_once './Savez.php';
+//require_once './Savez.php';
+require_once './Team.php';
+
+$tim= new Team('Liverpool');
+echo '<br>';
+var_dump($tim);
+echo "<pre>";
+print_r($tim);
+echo "</pre>";
+echo $tim->get_ime_saveza();
 
 
-$t1="Bayern";
-$savez=new Savez();
-$savez->set_savez($t1);
-var_dump ($t1);
-echo "<br>Savez tima ".$t1." se zove " . $savez->get_savez($t1)."<br>";
-
-$t1="Liverpool";
-$savez=new Savez();
-$savez->set_savez($t1);
-var_dump ($t1);
-echo "<br>Savez tima ".$t1." se zove " . $savez->get_savez($t1)."<br>";
 
 
-$t1="Dinamo";
-$savez=new Savez();
-$savez->set_savez($t1);
-var_dump ($t1);
-echo "<br>Savez tima ".$t1." se zove " . $savez->get_savez($t1)."<br>";
-
-echo $savez->get_savez_tima("Dinamo");
-
-
+            
