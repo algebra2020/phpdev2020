@@ -39,3 +39,19 @@ $c1->get_posao();
 $c2=new Covjek();
 $c1->set_posao(new Autoservis());
 $c1->get_posao();
+$c1->set_ime('Robin Hood');
+
+$m1->jedi();
+// nije potrebno kreirati objekt kao npr, $L1=new Life();
+Life::pozdrav();  // Pozovi mi iz klase life statičku metodu pozdrav
+$m1->jedi();
+$m1->set_ime('Đuro');
+Life::save($c1);
+Life::save_json($c1);
+unset($c1);
+$c1->get_posao(); //greska mrtav je
+Life::aninhiliraj($c1);
+echo Life::$isgood;
+
+$m1->jedi();
+
