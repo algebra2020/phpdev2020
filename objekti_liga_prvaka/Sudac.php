@@ -42,8 +42,7 @@ class Sudac {
         //$rand_keys = array_rand($suci, 2); ako vadimo dva člana vraca nam polje
         
         $this->sudac_ime=ucfirst($suci[$rand_keys] . "\n");
-         
-       
+           
     }
      /**
      * Dohvaćamo ime pomoću metode --> GETTER

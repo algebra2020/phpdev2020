@@ -7,18 +7,18 @@ require_once './Savez.php';
  *
  * @author Office10
  */
-class Team {
-    private $ime;
+class Team extends Savez{
+    //public $ime;
     private $bodovi;
     private $golovi;   // dani golovi
     private $golovip;  // primljeni golovi
-    private $savez;
+    //private $savez;
     
     
          
     public function __construct($ime="") {
         $this->ime=$ime;
-       
+        $savez = $this->set_ime_saveza($ime);
     }
 
     public function get_ime() {
@@ -49,19 +49,45 @@ class Team {
         return $this->golovip;
     }
     
-       
     
-    //Pitati kako upotrijebiti da se setira savez tima!!!!
-    public function set_savez_ime() {
-        //$savez=new Savez();
-        return $this->savez->set_savez($ime);
-        
-        //$this->sudac_ime=ucfirst($suci[$rand_keys[1]] . "\n");
+   function set_ime_saveza($ime=''){
+       switch ($ime) {
+          case "Bayern":
+               $savez= "njemački";
+               return $this->savez=$savez;
+                //return $this->savez="njemački";
+               break;
+           case "Liverpool":
+                $savez='engleski';
+                 return $this->savez=$savez;
+               //return $this->savez="engleski";
+              break;
+         case "Dinamo":
+              $savez='hrvatski';
+              return $this->savez=$savez;
+               //return $this->savez="hrvatski";
+             break;
+         case "Lion":
+              $savez='francuski';
+              return $this->savez=$savez;
+               //return $this->savez="hrvatski";
+             break;
+         default:
+             $savez='nepoznat';
+            return $this->savez=$savez;
+            break;
+           //return $this->savez="nepoznat savez";
+               }
     }
-    public function get_savez_ime() {
-        //$savez=new Savez();
-        return $this->savez;
+    
+    public function get_ime_saveza() {
         
-        //$this->sudac_ime=ucfirst($suci[$rand_keys[1]] . "\n");
+     return $this->savez;
     }
-}
+    
+   
+    
+   
+        
+    }
+
