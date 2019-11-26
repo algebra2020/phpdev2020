@@ -14,7 +14,7 @@ require_once './Sudac.php';
  */
 class Susret {
 
-    private $t1;
+    private $t1;  // objekt Team
     private $t2;
     private $rezultat = NULL;
     private $polu_rezultat = NULL;

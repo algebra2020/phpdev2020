@@ -5,7 +5,7 @@
  * @todo sudac fali?
  * @todo rang lista
  */
-//TODO objasniti autoload
+//TODO umjesto require implementirati autoload
 require_once './Team.php';
 require_once './Susret.php';
 require_once './Rang.php';
