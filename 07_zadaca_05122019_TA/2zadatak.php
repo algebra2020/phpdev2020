@@ -126,12 +126,12 @@ a:hover {
    
     
     <div class="odgovor">
-           
+           <?php  if(!isset($_POST['broj_btn'])){?> 
         <form method="POST" action="2zadatak.php">
         Koliko imena i prezimena želite upisati: <input required="true" type="number" name="broj" value="<?=$_POST['broj']?>"><Br>
         <input type="submit" name="broj_btn" value="Potvrdi broj">
         </form> 
-            
+        <?php } ?>          
             <?php
             if(isset($_POST['broj_btn'])){
               echo "<h3>Upišite podatke u donja polja:</h3>";  
