@@ -140,7 +140,10 @@ a:hover {
 
                 }
             }
-        
+       echo " <hr>";
+       if(isset($_GET['broj'])){
+          echo '<br>Odabrali ste broj: <span style="font-size:30px;color:white;background-color:mediumseagreen;border: 2px solid green;">'.$_GET['broj'].'.</span>'; 
+       }
               
     ?>
         
