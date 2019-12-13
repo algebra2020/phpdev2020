@@ -13,7 +13,7 @@ and open the template in the editor.
          <form method="GET" action="#">
                 
                Ime: <input required="true" type="text" name="ime" value="<?=(isset($_GET['ime']))?$_GET['ime']:''?>"><Br> 
-                Prezime:  <input  required="true" type="text" name="prezime" value="<?=(isset($_GET['prezime']))?$_GET['prezime']:''?>"><Br>
+               Prezime:  <input  required="true" type="text" name="prezime" value="<?=(isset($_GET['prezime']))?addslashes($_GET['prezime']):''?>"><Br>
                 Spol:<br>
                 <!-- (postojispol)? true:false  
                 if true (je li spol M)? true:false

@@ -13,6 +13,7 @@ za 05.11
 # Plusići
 PHP+Mysql
 09.12.2019. Tatjana +
+13.12.2019 Tatjana + POloženo!
 ////
 22.10.2019. Tatjana +
 24.10.2019. Tatjana +
