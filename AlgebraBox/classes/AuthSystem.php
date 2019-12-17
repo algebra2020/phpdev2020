@@ -174,7 +174,8 @@
 		/// Source: https://crackstation.net/hashing-security.htm //
 		private function create_hash($password)
 		{
-			$salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+			//$salt = base64_encode(mcrypt_create_iv(PBKDF2_SALT_BYTE_SIZE, MCRYPT_DEV_URANDOM));
+                    $salt = base64_encode(random_bytes(PBKDF2_SALT_BYTE_SIZE));
 			return PBKDF2_HASH_ALGORITHM . ":" . PBKDF2_ITERATIONS . ":" .  $salt . ":" .
 				base64_encode($this->pbkdf2(
 					PBKDF2_HASH_ALGORITHM,

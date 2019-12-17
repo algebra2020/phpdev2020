@@ -10,6 +10,8 @@
 			$output .= '<h1>Dobrodošli u AlgebraBox</h1>';
 			$output .= '<p>Pohranite svoje datoteke kod nas.</p>';
 			
+                        $salt = base64_encode(random_bytes(24));
+                        $output .=$salt;
 			return $output;
 		}
 		
