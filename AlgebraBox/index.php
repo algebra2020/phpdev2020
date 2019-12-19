@@ -12,6 +12,8 @@
 			
                         $salt = base64_encode(random_bytes(24));
                         $output .=$salt;
+                        $output .= var_dump($_SESSION);
+                        
 			return $output;
 		}
 		
